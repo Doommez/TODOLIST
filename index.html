@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+        <div class="none"><img src="change.png" style="display:none"></div>
+      <div class="header__button">
+        <div class="language"></div>
+        <input type="button" class="theme" value="change the theme" />
+      </div>
+      <div class="header__title">
+        <h1>Title</h1>
+      </div>
+    </header>
+    <main>
+      <div class="main__input">
+        <div class="main__lable">
+        <label
+          >Дата окончания <input type="date" name="date" id="date"
+        /></label>
+
+        <label>Название <input type="text" name="name" /> </label>
+
+        <label
+          >Приоритет
+          <select name="priority" size="1">
+            <option value="Обычный" selected>Обычный</option>
+            <option value="Первостепенно!">Первостепенно!</option>
+          </select>
+        </label>
+       
+        </div>
+        <div class="main__lable">
+            <label>
+              Описание <br /><textarea name="description"></textarea><br></label>
+          </div>
+        <div class="main__lable">
+          <input type="button" name="getValue" value="Внести" />
+        </div>
+      </div>
+      <div class="main__content" id="main__content">
+       <!--  <div class="main__content__task">
+          <div class="main__content__taskName">
+            <div class="main__content__date">2021-15-15</div>
+            <div class="main__content__name">Name</div>
+            <div class="main__content__priority">Vajno!</div>
+            <div class="main__content__change">
+              <img src="change.png" alt="change" />
+            </div>
+          </div>
+          <div class="main__content__taskValue">
+            <div class="main__content__description">
+              asdfasaskdfjklasdhflj;kashd;fjkhasd;jkfhas;djkfasf
+            </div>
+            <input type="button" value="Delete" />
+          </div> -->
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

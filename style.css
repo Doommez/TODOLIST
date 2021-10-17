@@ -1,0 +1,75 @@
+body{
+    background-color:skyblue;
+}
+img{
+    width: 15px;
+    height: 15px;
+}
+header{
+    display: flex;
+  flex-direction: column;
+
+    
+}
+.header__title{
+   width: 100%;
+   text-align: center;
+   
+}
+.header__button{
+    text-align: end;
+}
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.main__input{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 750px;
+    border: solid 1px slategray;
+    border-radius: 30px;
+}
+[name="description"]{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 60px;
+    resize:none;
+
+}
+textarea:focus{
+    outline: none;
+}
+.main__lable{
+width: 100%;
+text-align: center;
+}
+.main__content{
+    max-width: 750px;
+    width: 100%;
+    margin-top: 20px;
+}
+.main__content__task{
+    margin-top: 10px;
+}
+.main__content__taskName{
+    display: flex;
+    justify-content: space-between;
+    border: coral solid 1px;
+}
+.main__content__taskName div{
+    border: solid 1px coral;
+}
+.main__content__taskValue{
+    display: flex;
+    justify-content:space-between;
+    border: solid 1px coral;
+}
+.main__content__description div{
+    text-align: center;
+}
