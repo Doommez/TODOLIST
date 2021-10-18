@@ -4,6 +4,14 @@ body{
 img{
     width: 15px;
     height: 15px;
+    
+}
+.confirmText{
+    display:inline-block;vertical-align:middle;width:15px;height:15px;background:red;
+    transition: ease 1s;
+}
+.confirmText:hover{
+    background: green;
 }
 header{
     display: flex;
