@@ -5,6 +5,7 @@ const description=document.querySelector("[name='description']");
 const btnGetValue=document.querySelector("[name='getValue']")
 
 
+let mainPag=document.getElementById("main__content__pogination");
 let mainContent=document.getElementById("main__content");
 let contentTask=document.querySelectorAll(".main__content__task");
 
@@ -15,7 +16,13 @@ btnGetValue.addEventListener("click",getValue)
 let taskArr;
 if(JSON.parse( localStorage.getItem("taskArr"))!==null){
     taskArr=JSON.parse( localStorage.getItem("taskArr"));
-    render(JSON.parse( localStorage.getItem("taskArr")))
+    if(taskArr.length<4){
+      render(JSON.parse( localStorage.getItem("taskArr")))
+    }
+    else{
+      render(JSON.parse( localStorage.getItem("taskArr")).slice(0,4))
+    }
+   
 }
 else taskArr=[]
 
@@ -31,8 +38,11 @@ function getValue(){
         description:description.value};
     taskArr.push(value);
     let taskArrJson=JSON.stringify(taskArr)
-   localStorage.setItem("taskArr",taskArrJson)
-   render([value],taskArr.length-1);
+   localStorage.setItem("taskArr",taskArrJson);
+   if(taskArr.length<=4){
+    render([value],taskArr.length-1);
+   }
+   createPagination(getPages())
    date.value=name.value=description.value=''
 }
 
@@ -67,8 +77,13 @@ function del(i){
  newTaskArr.splice(i,1);
  console.log(newTaskArr);
  localStorage.setItem("taskArr",JSON.stringify(newTaskArr)) 
- mainContent.innerHTML="";
- render(JSON.parse( localStorage.getItem("taskArr")))
+ mainContent.innerHTML=""; 
+ if(taskArr.length<4){
+  render(JSON.parse( localStorage.getItem("taskArr")))
+}
+else{
+  render(JSON.parse( localStorage.getItem("taskArr")).slice(0,4))
+}
 }
 
 let changeBolean=false;
@@ -112,4 +127,63 @@ function confirmText(i){
  let chek=changeContent[0].querySelector('.confirmText');
 console.log(chek);
 changeContent[0].removeChild(chek)
+}
+
+
+let itemOnpage=4;
+function getPages(){
+  let pages;
+  return pages=Math.floor(JSON.parse( localStorage.getItem("taskArr")).length/4);
+}
+function createPagination(i){
+  mainPag.innerHTML="";
+  for(let j=0;j<=i;j++){
+    mainPag.innerHTML+=`
+
+    <div class="main__content__page" id="pag${j+1}" onclick=pag(${j+1})>${j+1}</div>
+`;
+  }
+  
+}
+
+createPagination(getPages())
+
+function pag(i){
+  mainContent.innerHTML=""
+  console.log(i);
+  console.log(JSON.parse( localStorage.getItem("taskArr")).slice((4*(i-1)),(i*4)));
+  render(JSON.parse( localStorage.getItem("taskArr")).slice((4*(i-1)),(i*4)))
+}
+
+let priorUp=false;
+function sortPrior(){
+  if(priorUp===false){
+    priorUp=true
+
+  }
+  else{
+    priorUp=false
+  }
+  let taskArr=JSON.parse( localStorage.getItem("taskArr"));
+  taskArr.sort(function(a,b){
+   if(a.priority>b.priority){
+    return -1
+   } 
+   if (b.priority>a.priority) {
+    return 1;
+}
+return 0
+  });
+  mainContent.innerHTML="";
+  localStorage.setItem("taskArr",JSON.stringify(taskArr))
+  
+  if(taskArr.length<4){
+    render(JSON.parse( localStorage.getItem("taskArr")))
+  }
+  else{
+    render(JSON.parse( localStorage.getItem("taskArr")).slice(0,4))
+  }
+  
+
+
 }

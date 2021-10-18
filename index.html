@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -44,6 +44,9 @@
           <input type="button" name="getValue" value="Внести" />
         </div>
       </div>
+      <div class="main__sort" id="main__sort">
+        <input type="button" value="Сортировать по приоритету" onclick="sortPrior()">
+      </div>
       <div class="main__content" id="main__content">
        <!--  <div class="main__content__task">
           <div class="main__content__taskName">
@@ -60,8 +63,14 @@
             </div>
             <input type="button" value="Delete" />
           </div> -->
+          
+        </div>
+        <div class="main__content__pogination"
+        id="main__content__pogination">
+          <div class="main__content__page">1</div>
         </div>
       </div>
+      
     </main>
     <footer></footer>
     <script src="script.js"></script>
