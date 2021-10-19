@@ -257,8 +257,14 @@ if(themeChange===false){
 }
 else{
   themeChange=false; 
-  document.body.animation="anim1 1s ease";
-  linkStyle.setAttribute("href","style.css");
+  document.body.classList.add("active");
+  setTimeout(function(){
+    document.body.classList.remove("active");
+    linkStyle.setAttribute("href","style.css");
+  },1000)
+   
+
+ 
  
   //document.body.style.cssText=" animation: anim 1s ease ;animation-fill-mode: forwards;"
 }

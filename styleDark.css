@@ -3,6 +3,20 @@ body{
     color: black;
     animation: anim 1s ease ;
     animation-fill-mode: forwards;
+    font-family: 'Pacifico', cursive;
+}
+input{
+    font-family: 'Pacifico', cursive;
+}
+select{
+    font-family: 'Pacifico', cursive;
+}
+textarea{
+    font-family: 'Pacifico', cursive;
+}
+body.active{
+    animation: anim1 1s ease ;
+    animation-fill-mode: forwards;
 }
 @keyframes anim1 {   
     0% {     

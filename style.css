@@ -1,7 +1,16 @@
 body{
     background-color:skyblue;
+    font-family: 'Pacifico', cursive;
 }
-
+input{
+    font-family: 'Pacifico', cursive;
+}
+select{
+    font-family: 'Pacifico', cursive;
+}
+textarea{
+    font-family: 'Pacifico', cursive;
+}
 img{
     width: 15px;
     height: 15px;
