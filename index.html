@@ -14,42 +14,50 @@
     <header>
         <div class="none"><img src="change.png" style="display:none"></div>
       <div class="header__button">
-        <div class="language"></div>
-        <input type="button" class="theme" value="change the theme" />
+        <label for=""><input type="button" class="language" value="change the language" /></label>
+        <label for=""><input type="button" class="theme" value="change the theme" /></label>
+        
       </div>
       <div class="header__title">
-        <h1>Title</h1>
+        <h1>ToDo List</h1>
       </div>
     </header>
     <main>
       <div class="main__input">
         <div class="main__lable">
-        <label
-          >Дата окончания <input type="date" name="date" id="date"
+        <label 
+          ><span class="lang">Дата окончания</span>  <input type="date" name="date" id="date"
         /></label>
 
-        <label>Название <input type="text" name="name" /> </label>
+        <label > <span class="lang">Название</span> <input type="text" name="name" /> </label>
 
-        <label
-          >Приоритет
+        <label 
+          ><span class="lang">Приоритет</span>
           <select name="priority" size="1">
-            <option value="Обычный" selected>Обычный</option>
-            <option value="Первостепенно!">Первостепенно!</option>
+            <option value="Обычный" class="langV" selected><span class="lang">Обычный</span></option>
+            <option class="langV" value="Первостепенно!"><span class="lang">Первостепенно!</span></option>
           </select>
         </label>
        
         </div>
         <div class="main__lable">
-            <label>
-              Описание <br /><textarea name="description"></textarea><br></label>
+            <label >
+              <span class="lang">Описание</span>  <br /><textarea name="description"></textarea><br></label>
           </div>
         <div class="main__lable">
-          <input type="button" name="getValue" value="Внести" />
+          <input type="button" name="getValue" class="langV" value="Внести" />
         </div>
       </div>
       <div class="main__sort" id="main__sort">
-        <input type="button" value="Сортировать по приоритету" onclick="sortPrior()">
-        <input type="button" value="Сортировать по дате" onclick="sortDate()">
+        <input type="button" class="langV" value="Сортировать по приоритету" onclick="sortPrior()">
+        
+        <input type="button" class="langV" value="Сортировать по дате" onclick="sortDate()">
+        <nav class="main__sort__filter " > <span class="lang">Фильтр:</span>
+          <li > <span class="lang">По имени</span></li>
+          <li ><span class="lang">По описанию</span></li>
+          <li ><span class="lang">По дате</span></li>
+          <li ><span class="lang">По приоритету</span></li>
+        </nav>
       </div>
       <div class="main__content" id="main__content">
        <!--  <div class="main__content__task">

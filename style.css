@@ -4,12 +4,32 @@ body{
 }
 input{
     font-family: 'Pacifico', cursive;
+    border-radius: 5px;
+    outline:none;
+    background-color:skyblue;
+    transition: ease-in 1s;
+}
+input:hover{
+    background-color: blueviolet;
 }
 select{
     font-family: 'Pacifico', cursive;
+    border: solid 2px;
+    border-radius: 5px;
+    outline:none;
+    background-color:skyblue;
+    transition: ease-in 1s;
+}
+
+select:hover{
+    background-color: blueviolet;
+ 
 }
 textarea{
     font-family: 'Pacifico', cursive;
+    outline:none;
+    background-color:skyblue;
+border: solid 2px;
 }
 img{
     width: 15px;
@@ -62,6 +82,7 @@ main{
 }
 textarea:focus{
     outline: none;
+
 }
 .main__lable{
 width: 100%;
@@ -74,19 +95,58 @@ text-align: center;
 }
 .main__content__task{
     margin-top: 10px;
+    border-radius: 10px;
+    border: solid 1px ;
 }
 .main__content__taskName{
     display: flex;
     justify-content: space-between;
-    border: coral solid 1px;
+  
+   /*  border: coral solid 1px; */
 }
-.main__content__taskName div{
-    border: solid 1px coral;
+.main__content__name{
+    max-width: 230px;
+    overflow: hidden;
+    border: solid 2px rgb(121, 253, 165);
+    border-radius: 8px;
+    background-color:rgb(121, 253, 165); 
 }
+.main__content__date{
+    border: hotpink solid 2px;
+    border-radius: 8px;
+    background-color:hotpink; 
+}
+.main__content__priority{
+    border: rgb(224, 228, 14) solid 2px;
+    border-radius: 8px;
+    background-color:rgb(224, 228, 14); 
+}
+.main__content__change{
+    cursor: pointer;
+    margin-right: 5px;
+    transition: ease 1s;
+}
+.main__content__change:hover{
+    transform: scale(1.4);
+}
+.main__content__description{
+    margin-left: 5px;
+}
+
 .main__content__taskValue{
     display: flex;
     justify-content:space-between;
-    border: solid 1px coral;
+
+}
+.main__content__taskValue input{
+    width: 60px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.highPriority{
+    border: rgb(250, 99, 11) solid 2px;
+    border-radius: 8px;
+    background-color:rgb(250, 99, 11); 
 }
 .main__content__description div{
     text-align: center;
@@ -105,4 +165,27 @@ text-align: center;
     text-align: center;
     vertical-align: middle;
     line-height: 1.2em;
+}
+.main__sort__filter{
+    list-style: none;
+    position: relative;
+    
+}
+li{
+    opacity: 0;
+    z-index: 2;
+    position: relative;
+    transition: 1s;
+    display: inline-block;
+   cursor: pointer;
+}
+.main__sort__filter:hover li{
+     opacity: 1;
+}
+ li:hover{
+     color: blueviolet;
+   
+}
+.main__sort{
+    display: flex;
 }

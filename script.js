@@ -56,7 +56,7 @@ function render(item, i) {
     <div class="main__content__taskName">
       <div class="main__content__date">${item.date}</div>
       <div class="main__content__name">${item.name}</div>
-      <div class="main__content__priority">${item.priority}</div>
+      <div class="main__content__priority ${item.priority==="Первостепенно!"&&'highPriority'}">${item.priority}</div>
       <div class="main__content__change" onclick="change(${i || index})">
         <img src="change.png" alt="change" />
       </div>
@@ -244,6 +244,7 @@ function sortDate(){
     }
 }
 
+//изменение темы
 let themeChange=false;
 let linkStyle=document.querySelector("[rel='stylesheet']")
 let theme=document.querySelector(".theme");
@@ -262,10 +263,37 @@ else{
     document.body.classList.remove("active");
     linkStyle.setAttribute("href","style.css");
   },1000)
-   
-
- 
- 
-  //document.body.style.cssText=" animation: anim 1s ease ;animation-fill-mode: forwards;"
+  
 }
-})
+});
+
+
+
+let englLet=["End date","title","Priority","ordinary","high","Description","Filter:","By name","By description","By Date","By priority"];
+let engLetValue=["ordinary","high","insert","sort by priority","sort by date"]
+let languageChange=false;
+
+let language=document.querySelector(".language");
+language.addEventListener("click",function(ev){
+  console.log(ev);
+  let changeBoxes=document.querySelectorAll(".lang")
+  let cgangelangV=document.querySelectorAll(".langV");
+  console.log(cgangelangV);
+  console.log(changeBoxes);
+if(languageChange===false){
+ 
+  languageChange=true;
+  changeBoxes.forEach((item,index,arr)=>{
+    item.innerText=englLet[index]
+  })
+  cgangelangV.forEach((item,index)=>{
+    item.value=engLetValue[index]
+  })
+
+}
+else{
+ 
+  
+  
+}
+});
