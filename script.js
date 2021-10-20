@@ -334,3 +334,11 @@ else{
   
 }
 });
+
+document.addEventListener("touchstart",tach);
+  function tach(){
+let list=document.querySelectorAll(".main__content__taskValue")
+list.forEach((item,index)=>{
+  item.classList.add(".tach")
+})
+}

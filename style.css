@@ -56,9 +56,7 @@ left: 20px;
   background-size: 20px 20px;
   box-shadow: 1px 1px 5px #000;
 }
-.confirmText:hover{
-    
-}
+
 header{
     display: flex;
   flex-direction: column;
@@ -215,6 +213,10 @@ flex-wrap: wrap;
     align-items: center;
 }
 .main__content__task:hover .main__content__taskValue{
+    height: 50px;
+    opacity: 1;
+}
+.tach{
     height: 50px;
     opacity: 1;
 }
