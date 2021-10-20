@@ -1,6 +1,7 @@
 body{
     background-color:skyblue;
     font-family: 'Pacifico', cursive;
+    
 }
 input{
     font-family: 'Pacifico', cursive;
@@ -37,11 +38,26 @@ img{
     
 }
 .confirmText{
-    display:inline-block;vertical-align:middle;width:15px;height:15px;background:red;
+    display:inline-block;vertical-align:middle;width:15px;height:15px;
     transition: ease 1s;
+    position: relative;
+}
+.confirmText::before{
+    content: "";
+   
+position: absolute;
+top: -5px;
+left: 20px;
+  width: 20px;
+  height: 20px;
+
+  background-image: url('sent.png');
+
+  background-size: 20px 20px;
+  box-shadow: 1px 1px 5px #000;
 }
 .confirmText:hover{
-    background: green;
+    
 }
 header{
     display: flex;
@@ -188,4 +204,17 @@ li{
 }
 .main__sort{
     display: flex;
+    align-items: center;
+height: 40px;
+flex-wrap: wrap;
+}
+.main__content__taskValue{
+    height: 0px;
+    opacity: 0;
+    transition: ease 0.5s;
+    align-items: center;
+}
+.main__content__task:hover .main__content__taskValue{
+    height: 50px;
+    opacity: 1;
 }

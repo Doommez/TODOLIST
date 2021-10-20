@@ -56,7 +56,7 @@ function render(item, i) {
     <div class="main__content__taskName">
       <div class="main__content__date">${item.date}</div>
       <div class="main__content__name">${item.name}</div>
-      <div class="main__content__priority ${item.priority==="Первостепенно!"&&'highPriority'}">${item.priority}</div>
+      <div class="main__content__priority ${(item.priority==="Первостепенно!"||item.priority==="high")&&'highPriority'}">${item.priority}</div>
       <div class="main__content__change" onclick="change(${i || index})">
         <img src="change.png" alt="change" />
       </div>
@@ -74,9 +74,7 @@ function render(item, i) {
 
 function del(i) {
   let newTaskArr = JSON.parse(localStorage.getItem("taskArr"));
-  console.log(newTaskArr);
   newTaskArr.splice(i, 1);
-  console.log(newTaskArr);
   localStorage.setItem("taskArr", JSON.stringify(newTaskArr))
   mainContent.innerHTML = "";
   if (taskArr.length < 4) {
@@ -93,10 +91,9 @@ function change(i) {
 
   let changeContent = changeContentTask.querySelectorAll(".main__content__description")
 
-  changeContent[0].style.cssText = 'border: solid red 1px; background-color: blue;';
+  changeContent[0].style.cssText = 'border: solid red 1px; ';
   changeContent[0].setAttribute("contenteditable", "true");
   changeContent[0].focus()
-  console.log(changeContent[0].textContent);
   let chek = document.createElement("div")
   chek.className = "confirmText"
   chek.setAttribute("contenteditable", "false");
@@ -164,9 +161,15 @@ function sortPrior() {
    
     taskArr.sort(function (a, b) {
       if (a.priority > b.priority) {
+        if(a.priority==="high"&&b.priority==="ordinary"){
+          return 1
+        }
         return -1
       }
       if (b.priority > a.priority) {
+        if(a.priority==="high"&&b.priority==="ordinary"){
+          return-1
+        }
         return 1;
       }
       return 0
@@ -177,9 +180,15 @@ function sortPrior() {
     
   taskArr.sort(function (a, b) {
     if (a.priority > b.priority) {
+      if(a.priority==="high"&&b.priority==="ordinary"){
+        return-1
+      }
       return 1
     }
     if (b.priority > a.priority) {
+      if(a.priority==="high"&&b.priority==="ordinary"){
+        return-1
+      }
       return -1;
     }
     return 0
@@ -269,8 +278,10 @@ else{
 
 
 
-let englLet=["End date","title","Priority","ordinary","high","Description","Filter:","By name","By description","By Date","By priority"];
+let englLet=["End date","title","Priority","Description","Filter:","By name","By description","By Date","By priority"];
 let engLetValue=["ordinary","high","insert","sort by priority","sort by date"]
+let ruLet=["Дата окончания","Название","Приоритет","Описание","Фильтр:", "По имени", "По описанию", "По дате", "По приоритету"];
+let ruLetValue=["Обычный","Первостепенно!","Внести","Сортировать по приоритету","Сортировать по дате"]
 let languageChange=false;
 
 let language=document.querySelector(".language");
@@ -287,12 +298,38 @@ if(languageChange===false){
     item.innerText=englLet[index]
   })
   cgangelangV.forEach((item,index)=>{
-    item.value=engLetValue[index]
+    item.value=engLetValue[index];
+    if(index===0){
+      item.innerText=engLetValue[0];
+   
+    }
+    if(index===1){
+       item.innerText=engLetValue[1]
+    }
+  
   })
+  
 
 }
 else{
+  
  
+    languageChange=false;
+    changeBoxes.forEach((item,index)=>{
+      item.innerText=ruLet[index]
+    })
+    cgangelangV.forEach((item,index)=>{
+      item.value=ruLetValue[index];
+      if(index===0){
+        item.innerText=ruLetValue[0];
+     
+      }
+      if(index===1){
+         item.innerText=ruLetValue[1]
+      }
+      
+    })
+  
   
   
 }

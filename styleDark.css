@@ -220,8 +220,23 @@ li{
 .main__sort__filter:hover li{
      opacity: 1;
 }
- li:hover{
-     color: blueviolet;
-   
-    
+li:hover{
+    color: blueviolet;
+  
+}
+.main__sort{
+   display: flex;
+   align-items: center;
+height: 40px;
+flex-wrap: wrap;
+}
+.main__content__taskValue{
+   height: 0px;
+   opacity: 0;
+   transition: ease 0.5s;
+   align-items: center;
+}
+.main__content__task:hover .main__content__taskValue{
+   height: 50px;
+   opacity: 1;
 }
