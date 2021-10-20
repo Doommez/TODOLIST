@@ -83,8 +83,10 @@ main{
     justify-content: center;
     flex-wrap: wrap;
     max-width: 750px;
+    
     border: solid 1px slategray;
     border-radius: 30px;
+    box-shadow: 5px 3px 4px 2px darkgrey;
 }
 [name="description"]{
     width: 100%;
@@ -111,6 +113,8 @@ text-align: center;
     margin-top: 10px;
     border-radius: 10px;
     border: solid 1px ;
+    background-color: cyan;
+    box-shadow: 5px 3px 4px 2px darkgrey;
 }
 .main__content__taskName{
     display: flex;
