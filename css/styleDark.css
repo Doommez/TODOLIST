@@ -1,9 +1,44 @@
 body{
     background-color:skyblue;
+    color: black;
+    animation: anim 1s ease ;
+    animation-fill-mode: forwards;
     font-family: 'Pacifico', cursive;
-    
 }
 input{
+    font-family: 'Pacifico', cursive;
+}
+select{
+    font-family: 'Pacifico', cursive;
+}
+textarea{
+    font-family: 'Pacifico', cursive;
+}
+body.active{
+    animation: anim1 1s ease ;
+    animation-fill-mode: forwards;
+}
+@keyframes anim1 {   
+    0% {     
+     color: blanchedalmond;
+      background-color:rgb(44, 45, 47);
+    
+    }   
+  
+    100% { color: black; 
+        background-color:skyblue;
+     }
+  }
+@keyframes anim {   
+    0% {     
+        
+    }   
+  
+    100% {color: white; 
+        background-color:rgb(44, 45, 47);
+     }
+  }
+  input{
     font-family: 'Pacifico', cursive;
     border-radius: 5px;
     outline:none;
@@ -51,12 +86,11 @@ left: 20px;
   width: 20px;
   height: 20px;
 
-  background-image: url('sent.png');
+  background-image: url('../img/sent.png');
 
   background-size: 20px 20px;
   box-shadow: 1px 1px 5px #000;
 }
-
 header{
     display: flex;
   flex-direction: column;
@@ -83,7 +117,6 @@ main{
     justify-content: center;
     flex-wrap: wrap;
     max-width: 750px;
-    
     border: solid 1px slategray;
     border-radius: 30px;
     box-shadow: 5px 3px 4px 2px darkgrey;
@@ -112,9 +145,8 @@ text-align: center;
 .main__content__task{
     margin-top: 10px;
     border-radius: 10px;
-    border: solid 1px ;
-    background-color: cyan;
     box-shadow: 5px 3px 4px 2px darkgrey;
+    border: solid 1px ;
 }
 .main__content__taskName{
     display: flex;
@@ -128,6 +160,7 @@ text-align: center;
     border: solid 2px rgb(121, 253, 165);
     border-radius: 8px;
     background-color:rgb(121, 253, 165); 
+    color: black;
 }
 .main__content__date{
     border: hotpink solid 2px;
@@ -138,6 +171,7 @@ text-align: center;
     border: rgb(224, 228, 14) solid 2px;
     border-radius: 8px;
     background-color:rgb(224, 228, 14); 
+    color: black;
 }
 .main__content__change{
     cursor: pointer;
@@ -183,6 +217,7 @@ text-align: center;
     text-align: center;
     vertical-align: middle;
     line-height: 1.2em;
+    color: black;
 }
 .main__sort__filter{
     list-style: none;
@@ -200,13 +235,13 @@ li{
 .main__sort__filter:hover li{
      opacity: 1;
 }
- li:hover{
-     color: blueviolet;
-   
+li:hover{
+    color: blueviolet;
+  
 }
 .main__sort{
-    display: flex;
-    align-items: center;
+   display: flex;
+   align-items: center;
 height: 40px;
 flex-wrap: wrap;
 }
@@ -224,3 +259,4 @@ flex-wrap: wrap;
     height: 50px;
     opacity: 1;
 }
+

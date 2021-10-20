@@ -58,7 +58,7 @@ function render(item, i) {
       <div class="main__content__name">${item.name}</div>
       <div class="main__content__priority ${(item.priority==="Первостепенно!"||item.priority==="high")&&'highPriority'}">${item.priority}</div>
       <div class="main__content__change" onclick="change(${i || index})">
-        <img src="change.png" alt="change" />
+        <img src="img/change.png" alt="change" />
       </div>
     </div>
     <div class="main__content__taskValue">
@@ -263,7 +263,7 @@ theme.addEventListener("click",function(ev){
   
 if(themeChange===false){
   themeChange=true;
-  linkStyle.setAttribute("href","styleDark.css")
+  linkStyle.setAttribute("href","css/styleDark.css")
 
 }
 else{
@@ -271,7 +271,7 @@ else{
   document.body.classList.add("active");
   setTimeout(function(){
     document.body.classList.remove("active");
-    linkStyle.setAttribute("href","style.css");
+    linkStyle.setAttribute("href","css/style.css");
   },1000)
   
 }
