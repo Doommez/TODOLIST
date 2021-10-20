@@ -130,8 +130,9 @@ function confirmText(i) {
 
 let itemOnpage = 4;
 function getPages() {
-  let pages;
-  return pages = Math.floor(JSON.parse(localStorage.getItem("taskArr")).length / 4);
+
+let pages = Math.floor(JSON.parse(localStorage.getItem("taskArr")).length / 4);
+  return pages 
 }
 function createPagination(i) {
   mainPag.innerHTML = "";
