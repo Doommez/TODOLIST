@@ -343,3 +343,62 @@ list.forEach((item,index)=>{
   item.classList.add(".tach")
 })
 }
+
+function filterName(ev){
+  if(ev.target==q[5]){
+    let name =languageChange?prompt("Enter name/title"):prompt("Введите имя/название")
+let filtername=JSON.parse(localStorage.getItem("taskArr")).map((item,index)=>{
+  if(name===item.name){
+    return item
+  }
+})
+let res=filtername.filter((item,index)=>{
+  return item!==undefined
+})
+mainContent.innerHTML = "";
+render(res);
+  }
+  if(ev.target==q[6]){
+    let dec =languageChange?prompt("Enter Description"):prompt("Введите Описание");
+    let filtername=JSON.parse(localStorage.getItem("taskArr")).map((item,index)=>{
+      if(dec===item.description){
+        return item
+      }
+    })
+    let res=filtername.filter((item,index)=>{
+      return item!==undefined
+    })
+    mainContent.innerHTML = "";
+    render(res);
+  }
+  if(ev.target==q[7]){
+    let dec =languageChange?prompt("Enter date [**-**-****]"):prompt("Введите  дату [**-**-****]");
+    let filtername=JSON.parse(localStorage.getItem("taskArr")).map((item,index)=>{
+      if(dec===item.date){
+        return item
+      }
+    })
+    let res=filtername.filter((item,index)=>{
+      return item!==undefined
+    })
+    mainContent.innerHTML = "";
+    render(res);
+  }
+  if(ev.target==q[8]){
+    let dec =languageChange?prompt("Enter date [**-**-****]"):prompt("Введите  дату [**-**-****]");
+    let filtername=JSON.parse(localStorage.getItem("taskArr")).map((item,index)=>{
+      if(dec===item.date){
+        return item
+      }
+    })
+    let res=filtername.filter((item,index)=>{
+      return item!==undefined
+    })
+    mainContent.innerHTML = "";
+    render(res);
+  }
+}
+let sortFilter=document.querySelector(".main__sort__filter")
+sortFilter.addEventListener("click",filterName)
+let q=document.querySelectorAll(".lang")
+console.log(q);
